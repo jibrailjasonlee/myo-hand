@@ -1,0 +1,8 @@
+# SolidWorks temp/backup
+~$*
+*.tmp
+*.bak
+# Python
+__pycache__/
+.venv/
+.ipynb_checkpoints/
