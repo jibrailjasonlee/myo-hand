@@ -32,9 +32,13 @@ Pulley radius is just a gear ratio. A smaller radius means less tendon travel an
 
 Big pulleys add no parts and no backlash, and they cut tendon friction, so I'm going as large as the finger allows (my guess is 5 to 6 mm) and putting the rest of the ratio in the motor gearing. Spool rotation of 230 to 290 deg rules out a standard 180 deg hobby servo. It needs a continuous-rotation servo or a geared DC motor with an encoder. I'll test two pulley sizes on the rig.
 
+Update 2026-10-24: there are no pulleys after all, see D-012. Cord travel is now about 61 mm, so the 180 deg servo is still out.
+
 ## D-007: Torque is a range, not a number (2026-10-17)
 
 The first estimate was about 0.7 Nm at the motor, using a 60 mm lever arm. With my real 93 mm finger and a fingertip-only contact it comes out near 1.3 Nm. Wrap grasps like the controller sit near the low end and a tip pinch sits near the high end. The 50% efficiency figure is a guess. I'm planning around 0.7 to 1.3 Nm and picking the actuator in Phase 2, after I've measured real efficiency. If that's too much: drop the safety factor, let the palm and thumb carry part of the load, or use a smaller spool with a higher gear ratio.
+
+Update 2026-10-24: with the guide layout in D-012 the range drops to about 0.5 to 0.75 Nm at a 6 mm spool.
 
 ## D-008: Requirements and decisions live in git from the start (2026-10-17)
 
@@ -45,6 +49,8 @@ Both docs sit in docs/. Calc scripts will go in docs/calcs/ once there are some.
 The master sketch is on the Front Plane. Origin is the center of the base joint, the finger runs along +Y, the pin axis is Z, and +X is the palm (tendon) side. Joints sit at y = 0, 45 and 70 mm, with the tip at 93 mm. I first drew it on the Top Plane, which would have put the pin axis on Y, so I moved it.
 
 There's a 10 mm diameter construction circle at each joint, and it does two jobs: it's the rounded knuckle end of the link around the pin, and it's the tendon moment arm (5 mm radius, so torque = T * 5 mm). That fixes the baseline pulley radius at 5 mm, in line with D-006. Later links start as copies of this skeleton file.
+
+Update 2026-10-24: the circles are a layout reference only. They aren't a pulley, see D-012.
 
 ## D-010: Link 1 body (2026-10-18)
 
@@ -62,13 +68,16 @@ Pin holes: 2.2 mm through the tongue so it spins freely, 2.0 mm through the ears
 
 Built and measured in Link1_Proximal: 7.0, 7.6, 4.7 and 8 mm all match.
 
-## D-012: Tendon routing is open (2026-10-24)
+## D-012: Cord rides on the palm face, in guides (2026-10-24)
 
-The 10 mm circles in the skeleton aren't a real pulley once the joint is a tongue in a clevis. A straight channel 5 mm off the axis has to bridge the open slot, and by hand that span grows from about 2.4 mm straight to about 11 mm at 90 deg of bend, so the cord gets dragged across the corner instead of following the joint. The surface a cord can actually ride on is the rounded palm side of the joint ends, 7.5 mm from the pin.
+The 10 mm circles aren't a pulley, and the first two fixes I tried on paper don't work.
 
-Two ways out:
+A tunnel 5 mm off the axis can't cross the slot: both mouths end up past the pin, so bending the joint lengthens the cord instead of shortening it. docs/calcs/tendon_path.py shows it. The cord taken up goes negative past 15 deg (minus 8.6 mm at 90 deg) and the arm flips sign, so the cord would fight the bend.
 
-- A shallow groove on the palm face, concentric with each joint. Effective arm about 7 mm: roughly 20 N per finger instead of 28 N, and about 33 mm of travel instead of 24 mm. Leaning this way.
-- Shrink the body depth from 15 mm to around 11 mm and keep a true 5 mm arm. Weaker links and fussier joints.
+A groove concentric with the joint (my first fix) fails for a different reason. When the finger curls toward the palm, the palm-side cord is on the inside of the bend. It can't wrap a pin-centred surface there, it takes a straight shortcut between guides. That one is reasoning only, it isn't in the script.
 
-No channel gets cut until this is decided. The 5 mm figures in D-006, D-009 and requirements.md stand until then and will need updating whichever way it goes.
+What works is a straight cord between small guides on the palm face, one either side of each joint, like a bowstring across the inside of the bend. The guide holes sit 9 mm off the axis (1.2 mm hole in a 3 mm block on the 7.5 mm palm face). Guides at y = 12 and y = 33 on link 1, y = 57.5 on link 2, and the cord anchored near the tip at y = 89. The arm is 9 mm in a straight finger and grows to about 15 mm by 90 deg of bend.
+
+From the script: about 61 mm of cord to take up with all three joints closed (90 / 100 / 80 deg), and 15.5 N per finger for 1.5 N at the tip with the finger straight, which is worse than real use. Spacing the guides 12 mm either side keeps the arm positive past 100 deg. Closer guides would cut the range.
+
+Untested: friction through the guides, whether the cord pinches between the links at full bend, and whether the small blocks print cleanly. The single-finger rig will measure the real arm. Collisions between the link ends at full bend get checked in CAD with a motion study.

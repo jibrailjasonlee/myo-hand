@@ -24,6 +24,6 @@ There's nothing to build or run yet. Firmware will get its own folder, and build
 
 The force and torque numbers are hand estimates. The friction coefficient (0.5), the 50% tendon efficiency and the joint ranges are all guesses until I build a single-finger test rig.
 
-By my rough math the motor needs 0.7 to 1.3 Nm at its output. That's well past a typical N20 gearmotor and close to the limit of a metal-gear hobby servo, so the transmission may change.
+By my rough math the motor needs 0.5 to 0.75 Nm at its output, and the spool turns about 1.6 times to close the finger. That's well past a typical N20 gearmotor and rules out a standard 180 deg servo, so the transmission may change.
 
 The potato chip may get dropped. If friction in the tendon makes low-force control too erratic, it's out and the data says why.
