@@ -53,3 +53,22 @@ A stadium profile with 7.5 mm end radii centered on the joints (15 mm deep in X)
 Not decided yet: clevis, tongue, clearances and the tendon channel. Watch the wall between the pulley surface (5 mm radius) and the palm face (7.5 mm). That's only 2.5 mm before the channel is cut.
 
 Untested: printing it flat with the pin axis vertical, so tendon load acts in the layer plane and the pin holes come out round.
+
+## D-011: Link 1 tongue, slot and pin holes (2026-10-24)
+
+Tongue on the proximal end: 7.0 mm wide, shoulder 8 mm past the pin. Slot on the distal end: 7.6 mm wide, bottom 8 mm behind the pin, open at the end. That leaves 4.7 mm ears (4.7 + 7.6 + 4.7 = 17). The next link's 7.0 mm tongue sits in the slot with 0.3 mm per side, and the 8 mm slot depth and shoulder offset both clear the 7.5 mm rounded end by 0.5 mm.
+
+Pin holes: 2.2 mm through the tongue so it spins freely, 2.0 mm through the ears so the pin stays put. A 2 mm dowel about 16 mm long fits the 17 mm width. Printed holes tend to come out small, so none of these clearances are trusted until a test print.
+
+Built and measured in Link1_Proximal: 7.0, 7.6, 4.7 and 8 mm all match.
+
+## D-012: Tendon routing is open (2026-10-24)
+
+The 10 mm circles in the skeleton aren't a real pulley once the joint is a tongue in a clevis. A straight channel 5 mm off the axis has to bridge the open slot, and by hand that span grows from about 2.4 mm straight to about 11 mm at 90 deg of bend, so the cord gets dragged across the corner instead of following the joint. The surface a cord can actually ride on is the rounded palm side of the joint ends, 7.5 mm from the pin.
+
+Two ways out:
+
+- A shallow groove on the palm face, concentric with each joint. Effective arm about 7 mm: roughly 20 N per finger instead of 28 N, and about 33 mm of travel instead of 24 mm. Leaning this way.
+- Shrink the body depth from 15 mm to around 11 mm and keep a true 5 mm arm. Weaker links and fussier joints.
+
+No channel gets cut until this is decided. The 5 mm figures in D-006, D-009 and requirements.md stand until then and will need updating whichever way it goes.
