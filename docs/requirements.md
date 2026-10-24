@@ -1,106 +1,78 @@
-# Requirements: Low-Cost Underactuated Hand (Research Prototype)
+# Requirements
 
-**Version:** 0.1 (Phase 0)
-**Last updated:** 2026-10-17
-**Status:** Draft, pending Phase 1 validation of assumptions
+What the hand has to do, how I'll check each requirement, and the numbers behind them. Most numbers are estimates until the single-finger rig exists. The assumptions table at the bottom says which.
 
-## 1. Problem statement
+## The problem
 
-Robotic and prosthetic hands are either expensive (rigid, sensor-heavy) or cheap and unreliable. Design a hand under CAD $80 that grasps everyday objects reliably without per-object tuning, using an underactuated, tendon-driven mechanism, and verify the result with measured data.
+Hands are either rigid and expensive or cheap and flaky. I want one under $80 CAD that picks up everyday objects without per-object tuning. It's tendon-driven and underactuated: one motor pulls all four fingers through a differential, so they wrap around whatever they touch.
 
-## 2. Scope
+## Scope
 
-**In scope**
-- Four fingers driven by one actuator through an underactuated differential mechanism.
-- Thumb with two postures (power opposition and pinch), driven by a second actuator.
-- Single-channel surface EMG (forearm) for open/close, with a gesture to switch thumb posture.
-- Benchtop and mock-forearm testing only.
+In: four fingers on one motor. A thumb with two postures (power and pinch) on a second motor. One forearm EMG channel for open/close, with a gesture to switch thumb posture. Testing on the bench and on a mock forearm.
 
-**Out of scope**
-- Individual finger control, wrist rotation, sensory feedback.
-- Any use by or on a person with a limb difference.
-- Picking objects flat off a table (objects are presented in a fixture or on a ledge).
+Out: individual finger control, wrist rotation, force feedback, anyone with a limb difference actually using it, and picking things flat off a table (objects get presented on a ledge or in a fixture).
 
-## 3. Constraints
+## Constraints
 
-| ID | Constraint |
-|----|------------|
-| C1 | Research prototype, not a medical device. No clinical claims. |
-| C2 | Battery-powered only. No mains connection to any part touching the body. |
-| C3 | Every printed part fits within the Bambu A1 Mini bed (180 x 180 x 180 mm). |
-| C4 | Total cost at most $80 CAD, including shipping to Toronto. |
-| C5 | Finger proportions scaled to a human index finger (see section 5). |
+- Research prototype. No clinical claims.
+- Battery power only. Nothing that touches the body ever connects to mains.
+- Every printed part fits in the A1 Mini's 180 x 180 x 180 mm bed.
+- $80 CAD all-in, shipping to Toronto included.
+- Finger proportions come from my own index finger.
 
-## 4. Requirements
+## Requirements
 
-Priority: **Must** = defines project success. **Should** = expected, can be descoped with justification. **Could** = nice to have. **Stretch** = gated by a go/no-go decision.
+Must means the project fails without it. Should can be dropped with a reason. Could is nice to have. Stretch gets decided after the single-finger test (see below).
 
-| ID | Requirement | Basis | Priority | Verification | Status |
-|----|-------------|-------|----------|--------------|--------|
-| R1 | Hold the MoYu WeiLong V10 cube (65 g) and an Xbox controller with 2 AA batteries (295 g) for 30 s without slip | Friction model (section 6) | Must | Hold test, repeated trials, record pass/fail | Open |
-| R2 | At least 1.5 N fingertip force per finger, all four fingers | Controller hold, SF 2, mu 0.5 | Must | Press fingertip on a scale, record force | Open |
-| R3 | Open aperture at least 100 mm | Object sizes (cube body diagonal about 95 mm, controller wider) | Must | Caliper measurement | Open |
-| R4 | Minimum controllable grip force at most 0.2 N, with resolution at most 0.05 N | Potato chip | Stretch | Force vs. position test on single-finger rig | Open |
-| R5 | Hold a potato chip with at most 10% breakage over 30 trials | Potato chip | Stretch (gated, see section 7) | 30-trial test, report confidence interval | Open |
-| R6 | Full close time at most 1.5 s | Usability | Should | Video or stopwatch | Open |
-| R7 | Hand mass at most 500 g | Wearability (target to be checked against prosthetics literature) | Should | Kitchen scale | Open |
-| R8 | Hold a grip with zero actuator power | Battery life | Could | Power-off hold test | Open |
-| R9 | Total cost at most $80 CAD | Project constraint C4 | Must | Bill of materials total | Open |
+| ID | Requirement | Where it comes from | Priority | How I'll check |
+|----|-------------|---------------------|----------|----------------|
+| R1 | Hold the cube (65 g) and the Xbox controller (295 g, with 2 AA) for 30 s without slipping | Friction math below | Must | Hold test, repeated trials, pass/fail |
+| R2 | At least 1.5 N fingertip force per finger, all four | Controller hold, SF 2, mu 0.5 | Must | Press a fingertip on a scale |
+| R3 | Open aperture of at least 100 mm | Cube body diagonal is about 95 mm, controller is wider | Must | Calipers |
+| R4 | Controllable grip force down to 0.2 N, with 0.05 N resolution | Potato chip | Stretch | Force vs. position on the single-finger rig |
+| R5 | Hold a chip with at most 10% breakage over 30 trials | Potato chip | Stretch | 30 trials, report the confidence interval |
+| R6 | Close in 1.5 s or less | Usability | Should | Video or stopwatch |
+| R7 | Hand mass of 500 g or less | Wearability, still to check against prosthetics literature | Should | Kitchen scale |
+| R8 | Hold a grip with zero motor power | Battery life | Could | Cut power, see if it holds |
+| R9 | Total cost of $80 CAD or less | Project constraint | Must | Bill of materials |
 
-## 5. Measured inputs
+## The numbers
 
-| Item | Value | Source |
-|------|-------|--------|
-| Rubik's cube (MoYu WeiLong V10) mass | about 65 g | Measured by author |
-| Xbox controller with 2 AA batteries | 295 g | Measured by author |
-| Index finger segment lengths (proximal, middle, distal) | 45, 25, 23 mm | Measured by author |
-| Palm width across knuckles | 74 mm | Measured by author |
-| Finger width per digit | 17 mm (74 mm / 4, minus gap) | Derived |
-| Chip | No-name chip, No Frills | Breakage force not yet measured |
+Measured: cube about 65 g, controller with batteries 295 g, index finger segments 45, 25 and 23 mm, palm width 74 mm. That gives 17 mm per finger (74 / 4, minus a gap). I haven't measured the chip's breaking force yet. The chips are the no-name ones from No Frills.
 
-## 6. Derived values and calculations
+Grip math. For a two-sided pinch you need N >= SF * W / (2 * mu). With SF = 2 and mu = 0.5:
 
-Holding condition for a two-sided grasp: `N >= SF * W / (2 * mu)`.
+- Cube (0.64 N): about 1.3 N total.
+- Controller (2.9 N): about 5.8 N per side, so roughly 1.45 N per finger across four fingers.
+- Chip (about 0.02 N, a guess): about 0.04 N.
 
-| Object | Weight W | Required normal force |
-|--------|----------|----------------------|
-| Cube | 0.64 N | about 1.3 N total |
-| Controller | 2.9 N | about 5.8 N per side, about 1.45 N per finger over four fingers |
-| Chip | about 0.02 N (estimated) | about 0.04 N |
+Chip to controller is about 50:1 in force. That spread is the hard part of this project, more than raw strength.
 
-Required force range from chip to controller is roughly 50:1.
+Tendon tension is T = F * L / r. Worst case is a fingertip-only contact, so F = 1.5 N and L = 93 mm. With a 6 mm spool and about 30 mm of tendon stroke:
 
-Tendon tension estimate: `T = F * L / r`, with F = 1.5 N, L = 93 mm (fingertip-only contact), r = proximal pulley radius.
+| Pulley radius | Tension per finger | Spool rotation |
+|---------------|--------------------|----------------|
+| 5 mm | about 28 N | about 290 deg |
+| 4 mm | about 34.9 N | about 233 deg |
 
-| Pulley radius | Tension per finger | Spool rotation (6 mm spool, about 30 mm stroke) |
-|---------------|--------------------|-------------------------------------------------|
-| 5 mm | about 28 N | about 290 degrees |
-| 4 mm | about 34.9 N | about 233 degrees |
+Smaller radius means less travel and more tension, and the product stays constant.
 
-Estimated actuator torque: roughly 0.7 N.m (wrap grasp) to 1.3 N.m (fingertip-only pinch) at the motor output, assuming 50% transmission efficiency. Order of magnitude only.
+Putting it together: roughly 0.7 Nm at the motor for a wrap grasp up to roughly 1.3 Nm for a fingertip pinch, assuming 50% transmission efficiency. Treat that as order of magnitude.
 
-Calculation scripts should be placed in `docs/calcs/` and referenced here.
+## Chip gate
 
-## 7. Stretch gate (R4, R5)
+Once the single-finger rig exists, I'll measure force vs. position on a TPU pad. If the curve is smooth and repeatable enough for about 0.05 N resolution, R4 and R5 stay. If friction and hysteresis make it erratic, both get dropped, the reason goes in decisions.md, and the data stays in the repo.
 
-After the Phase 1 single-finger rig is built, measure force vs. position on a TPU pad.
-- **Go:** the curve is smooth and repeatable enough to reach about 0.05 N resolution. Keep R4 and R5.
-- **No-go:** friction and hysteresis make it erratic. Drop R4 and R5, document the reason in `decisions.md`, and record the measured data.
+## Assumptions
 
-## 8. Assumptions to validate
+None of these are verified yet.
 
-| ID | Assumption | Value | Status | How to validate |
-|----|------------|-------|--------|-----------------|
-| A1 | Friction coefficient, TPU pad on object | 0.5 (conservative) | Unverified | Tilt test with printed TPU swatch |
-| A2 | Safety factor | 2 | Unverified | Review after Phase 1 data |
-| A3 | Transmission efficiency (tendon plus gearing) | 50% | Unverified | Measure tension in vs. fingertip force out |
-| A4 | Joint flexion ranges (MCP, PIP, DIP) | 90, 100, 80 degrees | Unverified | Check against measurements and literature |
-| A5 | Chip fracture force | Unknown | Not measured | Coin-loading test or Phase 1 rig |
-| A6 | Tendon stroke allowance for differential | +30% | Unverified | Check in CAD and on the rig |
-| A7 | Hand mass target | 500 g | Unverified | Compare to prosthetics literature |
-
-## 9. Change log
-
-| Date | Change |
-|------|--------|
-| 2026-10-17 | v0.1 created from Phase 0 discussion. Torque estimate revised from about 0.7 N.m to 0.7 to 1.3 N.m after using measured finger length (93 mm). Chip requirements moved to Stretch with Phase 1 gate. |
+| ID | Assumption | How I'll check |
+|----|------------|----------------|
+| A1 | Friction coefficient of 0.5 for a TPU pad on the objects | Tilt test with a printed TPU swatch |
+| A2 | Safety factor of 2 | Revisit after rig data |
+| A3 | 50% efficiency through tendon and gearing | Tension in vs. fingertip force out |
+| A4 | Joint ranges of 90 / 100 / 80 deg (MCP / PIP / DIP) | Compare against literature |
+| A5 | Chip fracture force (unknown) | Coin loading, or the rig |
+| A6 | 30% extra tendon stroke for the differential | Check in CAD and on the rig |
+| A7 | 500 g is a sensible hand mass target | Compare against prosthetics literature |
