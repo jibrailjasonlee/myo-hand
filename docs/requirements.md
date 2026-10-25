@@ -48,16 +48,13 @@ Grip math. For a two-sided pinch you need N >= SF * W / (2 * mu). With SF = 2 an
 
 Chip to controller is about 50:1 in force. That spread is the hard part of this project, more than raw strength.
 
-Tendon tension is T = F * L / r. Worst case is a fingertip-only contact, so F = 1.5 N and L = 93 mm. With a 6 mm spool and about 30 mm of tendon stroke:
+Cord path. The cord runs along the palm face through small guides either side of each joint, 9 mm off the axis (see D-012 and docs/calcs/tendon_path.py). The arm is 9 mm in a straight finger and grows to about 15 mm as it closes.
 
-| Pulley radius | Tension per finger | Spool rotation |
-|---------------|--------------------|----------------|
-| 5 mm | about 28 N | about 290 deg |
-| 4 mm | about 34.9 N | about 233 deg |
+- Cord to take up with all three joints closed (90 / 100 / 80 deg): about 61 mm per finger.
+- Tension for 1.5 N at the tip with the finger straight: T = F * L / r = 1.5 * 93 / 9, about 15.5 N. It drops once the finger curls.
+- Four fingers on a 6 mm spool: about 583 deg of rotation, and roughly 0.5 Nm (wrap grasp) to 0.75 Nm (tip pinch) at the motor, assuming 50% efficiency. A 10 mm spool cuts the rotation to 350 deg and raises the torque by two thirds.
 
-Smaller radius means less travel and more tension, and the product stays constant.
-
-Putting it together: roughly 0.7 Nm at the motor for a wrap grasp up to roughly 1.3 Nm for a fingertip pinch, assuming 50% transmission efficiency. Treat that as order of magnitude.
+Order of magnitude only. Guide friction will push the real efficiency below 50%.
 
 ## Chip gate
 
@@ -71,7 +68,7 @@ None of these are verified yet.
 |----|------------|----------------|
 | A1 | Friction coefficient of 0.5 for a TPU pad on the objects | Tilt test with a printed TPU swatch |
 | A2 | Safety factor of 2 | Revisit after rig data |
-| A3 | 50% efficiency through tendon and gearing | Tension in vs. fingertip force out |
+| A3 | 50% efficiency through guides, cord and gearing | Tension in vs. fingertip force out |
 | A4 | Joint ranges of 90 / 100 / 80 deg (MCP / PIP / DIP) | Compare against literature |
 | A5 | Chip fracture force (unknown) | Coin loading, or the rig |
 | A6 | 30% extra tendon stroke for the differential | Check in CAD and on the rig |
