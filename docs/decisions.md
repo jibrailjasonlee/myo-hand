@@ -60,6 +60,8 @@ Not decided yet: clevis, tongue, clearances and the tendon channel. Watch the wa
 
 Untested: printing it flat with the pin axis vertical, so tendon load acts in the layer plane and the pin holes come out round.
 
+Update 2026-10-25: that orientation stops working once the slot is cut. With the pin axis vertical the slot becomes a horizontal gap and the top ear hangs over it, so it needs supports, and the slot width would depend on support quality instead of XY accuracy. Print it on its flat back face (x = -7.5) with the guide blocks pointing up. Slot and tongue widths then come from XY accuracy, no supports are needed, and the pin holes lie on their side, so expect them to print a bit small and oval. The lower quarter of each rounded end will come out rough.
+
 ## D-011: Link 1 tongue, slot and pin holes (2026-10-24)
 
 Tongue on the proximal end: 7.0 mm wide, shoulder 8 mm past the pin. Slot on the distal end: 7.6 mm wide, bottom 8 mm behind the pin, open at the end. That leaves 4.7 mm ears (4.7 + 7.6 + 4.7 = 17). The next link's 7.0 mm tongue sits in the slot with 0.3 mm per side, and the 8 mm slot depth and shoulder offset both clear the 7.5 mm rounded end by 0.5 mm.
