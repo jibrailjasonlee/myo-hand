@@ -91,3 +91,17 @@ Untested: friction through the guides, whether the cord pinches between the link
 Link 1 with the pins 25 mm apart: 40 mm long, same 15 x 17 section. Tongue and slot are the same as link 1, with the slot bottom at y = 17. One guide block at y = 11.5 to 13.5 sits 12.5 mm from each pin, so it serves the PIP and the DIP joint both. Hole sizes are the same as rev A (2.2 tongue, 2.0 ears, 1.2 guide) so they can all change together once the real pin is chosen.
 
 Checked in the STEP file: extents, tongue, slot, shoulder, block and hole positions and sizes all match. Not printed yet.
+
+## D-014: Cost cap raised to $200 CAD (2026-10-26)
+
+The $80 cap didn't survive a real parts list. The finger, motor, driver, ESP32 and fasteners alone come to roughly $85 to $125, and EMG plus a battery add another $85 to $150 on top. Estimates are in docs/bom.md, with only the MyoWare price and one gearmotor's specs checked against a source.
+
+New cap is $200 CAD all-in with shipping. That's tight, not comfortable. It holds if the EMG front end is built from an instrumentation amp instead of bought as a MyoWare, a bench supply covers power until late, and there's no custom PCB. If receipts pass $200 I'll log it here instead of quietly moving the number again.
+
+## D-015: Link 3 (2026-10-26)
+
+The fingertip. Same tongue as links 1 and 2, no slot. Stadium with its centers 15.5 mm apart, so the tip is 23 mm past the pin and the whole part is 30.5 mm long. One cord anchor block at y = 14 to 16 with a 1.2 mm hole at x = 9, same height off the axis as the guides.
+
+Checked in the STEP file: extents, tongue, shoulder, anchor block and hole positions all match. Not printed yet.
+
+The anchor is 15 mm past the DIP pin, where tendon_path.py had it at 19. Total cord to take up goes from 61 mm to 60 mm, which doesn't matter yet. The script is updated to match.

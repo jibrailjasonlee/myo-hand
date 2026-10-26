@@ -1,6 +1,6 @@
 # myo-hand
 
-A cheap tendon-driven hand with a prosthetic-style EMG interface. One motor closes all four fingers through an underactuated differential, a second motor flips the thumb between power and pinch, and a single forearm EMG channel handles open/close. The target is under $80 CAD, and every printed part fits on a Bambu A1 Mini.
+A cheap tendon-driven hand with a prosthetic-style EMG interface. One motor closes all four fingers through an underactuated differential, a second motor flips the thumb between power and pinch, and a single forearm EMG channel handles open/close. The target is under $200 CAD, and every printed part fits on a Bambu A1 Mini.
 
 It's a research prototype, not a medical device, and nobody is going to wear it.
 
@@ -15,6 +15,7 @@ Early. The finger skeleton and the first link body (60 x 15 x 17 mm) are modelle
     cad/                    SolidWorks parts, with a STEP export next to them where I've made one
     docs/requirements.md    what it has to do, the numbers behind that, how each requirement gets checked
     docs/decisions.md       design decisions, newest at the bottom
+    docs/bom.md             what to buy, in stages, with price estimates
 
 You need SolidWorks for the .SLDPRT files. The STEP files open in anything.
 

@@ -46,7 +46,7 @@ if __name__ == "__main__":
     r = 9
     mcp = show("MCP: palm guide to link 1 guide at y=12", r, -12, 12, 90)
     pip = show("PIP: link 1 guide at y=33 to link 2 guide at y=57.5", r, -12, 12.5, 100)
-    dip = show("DIP: link 2 guide at y=57.5 to tip anchor at y=89", r, -12.5, 19, 80)
+    dip = show("DIP: link 2 guide at y=57.5 to tip anchor at y=85", r, -12.5, 15, 80)
     print(f"\ntotal cord to take up, all three joints fully closed: {mcp + pip + dip:.0f} mm")
 
     # fingertip-only push, straight finger (arm is smallest here, so worst case)

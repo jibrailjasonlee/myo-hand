@@ -4,7 +4,7 @@ What the hand has to do, how I'll check each requirement, and the numbers behind
 
 ## The problem
 
-Hands are either rigid and expensive or cheap and flaky. I want one under $80 CAD that picks up everyday objects without per-object tuning. It's tendon-driven and underactuated: one motor pulls all four fingers through a differential, so they wrap around whatever they touch.
+Hands are either rigid and expensive or cheap and flaky. I want one under $200 CAD that picks up everyday objects without per-object tuning. It's tendon-driven and underactuated: one motor pulls all four fingers through a differential, so they wrap around whatever they touch.
 
 ## Scope
 
@@ -17,7 +17,7 @@ Out: individual finger control, wrist rotation, force feedback, anyone with a li
 - Research prototype. No clinical claims.
 - Battery power only. Nothing that touches the body ever connects to mains.
 - Every printed part fits in the A1 Mini's 180 x 180 x 180 mm bed.
-- $80 CAD all-in, shipping to Toronto included.
+- $200 CAD all-in, shipping to Toronto included.
 - Finger proportions come from my own index finger.
 
 ## Requirements
@@ -34,7 +34,7 @@ Must means the project fails without it. Should can be dropped with a reason. Co
 | R6 | Close in 1.5 s or less | Usability | Should | Video or stopwatch |
 | R7 | Hand mass of 500 g or less | Wearability, still to check against prosthetics literature | Should | Kitchen scale |
 | R8 | Hold a grip with zero motor power | Battery life | Could | Cut power, see if it holds |
-| R9 | Total cost of $80 CAD or less | Project constraint | Must | Bill of materials |
+| R9 | Total cost of $200 CAD or less, shipping included | Project constraint (raised from $80, see D-014) | Must | docs/bom.md, actual receipts |
 
 ## The numbers
 
@@ -50,9 +50,9 @@ Chip to controller is about 50:1 in force. That spread is the hard part of this 
 
 Cord path. The cord runs along the palm face through small guides either side of each joint, 9 mm off the axis (see D-012 and docs/calcs/tendon_path.py). The arm is 9 mm in a straight finger and grows to about 15 mm as it closes.
 
-- Cord to take up with all three joints closed (90 / 100 / 80 deg): about 61 mm per finger.
+- Cord to take up with all three joints closed (90 / 100 / 80 deg): about 60 mm per finger.
 - Tension for 1.5 N at the tip with the finger straight: T = F * L / r = 1.5 * 93 / 9, about 15.5 N. It drops once the finger curls.
-- Four fingers on a 6 mm spool: about 583 deg of rotation, and roughly 0.5 Nm (wrap grasp) to 0.75 Nm (tip pinch) at the motor, assuming 50% efficiency. A 10 mm spool cuts the rotation to 350 deg and raises the torque by two thirds.
+- Four fingers on a 6 mm spool: about 574 deg of rotation, and roughly 0.5 Nm (wrap grasp) to 0.75 Nm (tip pinch) at the motor, assuming 50% efficiency. A 10 mm spool cuts the rotation to 345 deg and raises the torque by two thirds.
 
 Order of magnitude only. Guide friction will push the real efficiency below 50%.
 
