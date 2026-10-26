@@ -85,3 +85,9 @@ What works is a straight cord between small guides on the palm face, one either 
 From the script: about 61 mm of cord to take up with all three joints closed (90 / 100 / 80 deg), and 15.5 N per finger for 1.5 N at the tip with the finger straight, which is worse than real use. Spacing the guides 12 mm either side keeps the arm positive past 100 deg. Closer guides would cut the range.
 
 Untested: friction through the guides, whether the cord pinches between the links at full bend, and whether the small blocks print cleanly. The single-finger rig will measure the real arm. Collisions between the link ends at full bend get checked in CAD with a motion study.
+
+## D-013: Link 2 (2026-10-26)
+
+Link 1 with the pins 25 mm apart: 40 mm long, same 15 x 17 section. Tongue and slot are the same as link 1, with the slot bottom at y = 17. One guide block at y = 11.5 to 13.5 sits 12.5 mm from each pin, so it serves the PIP and the DIP joint both. Hole sizes are the same as rev A (2.2 tongue, 2.0 ears, 1.2 guide) so they can all change together once the real pin is chosen.
+
+Checked in the STEP file: extents, tongue, slot, shoulder, block and hole positions and sizes all match. Not printed yet.
