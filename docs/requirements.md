@@ -69,7 +69,7 @@ None of these are verified yet.
 | A1 | Friction coefficient of 0.5 for a TPU pad on the objects | Tilt test with a printed TPU swatch |
 | A2 | Safety factor of 2 | Revisit after rig data |
 | A3 | 50% efficiency through guides, cord and gearing | Tension in vs. fingertip force out |
-| A4 | Joint ranges of 90 / 100 / 80 deg (MCP / PIP / DIP) | Compare against literature |
+| A4 | Joint ranges of 90 / 100 / 80 deg (MCP / PIP / DIP) | Compare against literature. Rev A link 1 stops a little past 90 deg of flexion by hand (2026-10-25) |
 | A5 | Chip fracture force (unknown) | Coin loading, or the rig |
 | A6 | 30% extra tendon stroke for the differential | Check in CAD and on the rig |
 | A7 | 500 g is a sensible hand mass target | Compare against prosthetics literature |

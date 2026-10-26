@@ -60,6 +60,8 @@ Not decided yet: clevis, tongue, clearances and the tendon channel. Watch the wa
 
 Untested: printing it flat with the pin axis vertical, so tendon load acts in the layer plane and the pin holes come out round.
 
+Update 2026-10-25: that orientation stops working once the slot is cut. With the pin axis vertical the slot becomes a horizontal gap and the top ear hangs over it, so it needs supports, and the slot width would depend on support quality instead of XY accuracy. Print it on its flat back face (x = -7.5) with the guide blocks pointing up. Slot and tongue widths then come from XY accuracy, no supports are needed, and the pin holes lie on their side, so expect them to print a bit small and oval. The lower quarter of each rounded end will come out rough.
+
 ## D-011: Link 1 tongue, slot and pin holes (2026-10-24)
 
 Tongue on the proximal end: 7.0 mm wide, shoulder 8 mm past the pin. Slot on the distal end: 7.6 mm wide, bottom 8 mm behind the pin, open at the end. That leaves 4.7 mm ears (4.7 + 7.6 + 4.7 = 17). The next link's 7.0 mm tongue sits in the slot with 0.3 mm per side, and the 8 mm slot depth and shoulder offset both clear the 7.5 mm rounded end by 0.5 mm.
@@ -67,6 +69,8 @@ Tongue on the proximal end: 7.0 mm wide, shoulder 8 mm past the pin. Slot on the
 Pin holes: 2.2 mm through the tongue so it spins freely, 2.0 mm through the ears so the pin stays put. A 2 mm dowel about 16 mm long fits the 17 mm width. Printed holes tend to come out small, so none of these clearances are trusted until a test print.
 
 Built and measured in Link1_Proximal: 7.0, 7.6, 4.7 and 8 mm all match.
+
+Rev A printed in PLA, back face down (2026-10-25). Ruler measurements match the CAD, though a ruler can't confirm the 0.3 mm clearance. Both pin holes printed small. A wooden toothpick (about 2 mm, not a precise gauge) is a firm fit in the tongue hole and won't go through the ear holes easily. Flexion stops a little past 90 deg, with the shoulders and the guide blocks touching at about the same angle. Extension goes about 90 deg past straight before the back of the tongue stops it, so the finger needs a hard stop at straight. The cord test is skipped for now (no thread at home). Rev B will probably open the tongue hole to about 2.4 mm and the ear holes to about 2.1 to 2.2 mm, once the sanded-pin fit is known.
 
 ## D-012: Cord rides on the palm face, in guides (2026-10-24)
 
