@@ -70,6 +70,8 @@ Pin holes: 2.2 mm through the tongue so it spins freely, 2.0 mm through the ears
 
 Built and measured in Link1_Proximal: 7.0, 7.6, 4.7 and 8 mm all match.
 
+Rev A printed in PLA, back face down (2026-10-25). Ruler measurements match the CAD, though a ruler can't confirm the 0.3 mm clearance. Both pin holes printed small. A wooden toothpick (about 2 mm, not a precise gauge) is a firm fit in the tongue hole and won't go through the ear holes easily. Flexion stops a little past 90 deg, with the shoulders and the guide blocks touching at about the same angle. Extension goes about 90 deg past straight before the back of the tongue stops it, so the finger needs a hard stop at straight. The cord test is skipped for now (no thread at home). Rev B will probably open the tongue hole to about 2.4 mm and the ear holes to about 2.1 to 2.2 mm, once the sanded-pin fit is known.
+
 ## D-012: Cord rides on the palm face, in guides (2026-10-24)
 
 The 10 mm circles aren't a pulley, and the first two fixes I tried on paper don't work.
