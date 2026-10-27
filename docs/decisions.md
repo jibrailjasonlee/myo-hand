@@ -123,3 +123,9 @@ Untested: it's a 2D model, and the printed stop hasn't been tried.
 docs/calcs/closing_order.py balances cord torque against the back elastic at each joint. With the same elastic on all three joints, they start closing at nearly the same cord tension (0.61 to 0.63 N to reach 30 deg), so the order is undefined and guide friction would decide it. With the preload graded 0.2 / 0.3 / 0.45 N the knuckle goes first, but only by 0.05 to 0.1 N. A preload of 0.1 / 0.3 / 0.8 N widens that. The cord geometry barely helps, since the guides give nearly the same arm at every joint.
 
 So D-005 (proximal first) gets set with the elastic, not the guides: the knuckle gets the lightest elastic and the tip the heaviest. The model has no friction and the stiffness (0.3 N/mm) is a guess. The cord test should measure the elastic's real stiffness and preload. Free-air order only matters for pushing the cube away. Once the finger touches something, contact forces decide the rest.
+
+## D-018: Rev B links 1 and 2 have the extension stops (2026-10-27)
+
+The stop blocks from D-016 are in links 1 and 2. Checked in the STEP files: each stop face is 7.8 mm past its pin (y = 52.8 on link 1, y = 32.8 on link 2), 5.5 mm wide (x = -7.5 to -2), on both ears only (z = 3.8 to 8.5 each side), and the slot between them is still clear. The guide holes are where they were. Link 1 is now 60.3 mm long and link 2 is 40.3 mm, because the block sticks out 0.3 mm past the rounded end.
+
+Not printed yet. Pin-hole sizes are unchanged until a real pin is chosen.
