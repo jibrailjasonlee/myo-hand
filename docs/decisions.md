@@ -105,3 +105,15 @@ The fingertip. Same tongue as links 1 and 2, no slot. Stadium with its centers 1
 Checked in the STEP file: extents, tongue, shoulder, anchor block and hole positions all match. Not printed yet.
 
 The anchor is 15 mm past the DIP pin, where tendon_path.py had it at 19. Total cord to take up goes from 61 mm to 60 mm, which doesn't matter yet. The script is updated to match.
+
+## D-016: Extension stop on the ears (2026-10-26)
+
+Rev A joints bend about 94 deg both ways. Flexion is fine, but extension has to stop at straight: the elastic on the back pulls the finger open, and with nothing in the way it would keep going backwards.
+
+docs/calcs/joint_range.py models one joint in 2D from the link dimensions. It gives 94.5 deg of flexion and 94 deg of extension, which matches the hand test (a little past 90 flexion, about 90 extension). The slot bottom is what stops both: the limit works out to 2 * atan(slot depth / 7.5), so 93.6 deg for an 8 mm slot.
+
+Fix: a block on the back half of each pair of ears, x = -7.5 to -2, running from the pin to 7.8 mm past it. The next link's shoulder sits 8 mm past the pin, so it hits the block after 2.5 deg of extension, and the 0.2 mm gap is the play. In the model flexion doesn't change. The block has to go in before the slot cut in the feature tree so the cut trims it and the slot stays clear for the tongue. It goes on the distal ears of links 1 and 2 (rev B), and in the palm clevis later. Back-face-down printing is unchanged, since the block's back face is the same plane as the link's.
+
+PIP wanted 100 deg and this doesn't get there. The slot corner limits at 94.5 and the guide blocks touch at 96. Reaching 100 or more would take a 10 mm slot, a 10 mm shoulder and shorter guides, for a few degrees. Not doing that. If the cord test says the middle joint needs more, I'll revisit.
+
+Untested: it's a 2D model, and the printed stop hasn't been tried.
