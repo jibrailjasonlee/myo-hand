@@ -129,3 +129,11 @@ So D-005 (proximal first) gets set with the elastic, not the guides: the knuckle
 The stop blocks from D-016 are in links 1 and 2. Checked in the STEP files: each stop face is 7.8 mm past its pin (y = 52.8 on link 1, y = 32.8 on link 2), 5.5 mm wide (x = -7.5 to -2), on both ears only (z = 3.8 to 8.5 each side), and the slot between them is still clear. The guide holes are where they were. Link 1 is now 60.3 mm long and link 2 is 40.3 mm, because the block sticks out 0.3 mm past the rounded end.
 
 Not printed yet. Pin-hole sizes are unchanged until a real pin is chosen.
+
+## D-019: Palm is a base tray with a cover plate (2026-10-27)
+
+The palm is a base tray and a separate cover plate on the palm face. The cord guides, the differential and the wiring all need to be reachable while I debug, and a single closed piece would make that hard. It costs a second print and a few screws.
+
+Size to start with: 74 mm wide, 15 mm deep and about 87.5 mm long (80 mm behind the knuckle pins, plus the 7.5 mm round end), so it fits the print bed. The four finger positions are 18.5 mm apart (17 mm finger plus 1.5 mm gap), centred at z = +-9.25 and +-27.75. Each has the same clevis as the end of link 1: 7.6 mm slot, 4.7 mm ears, 8 mm slot depth, and the extension stop from D-016. One long pin through all four knuckles is the plan, which is why the palm gets built as one body.
+
+Open problem: the differential. D-002 assumed a whiffletree, but the fingers are only 18.5 mm apart, so a rigid bar can't absorb the 40 mm or more of cord difference between a stopped finger and a closing one. It probably needs the cord to run around pulleys. That gets worked out after the palm shape, and the palm cavity just has to leave room and stay reachable through the cover.
