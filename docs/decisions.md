@@ -117,3 +117,9 @@ Fix: a block on the back half of each pair of ears, x = -7.5 to -2, running from
 PIP wanted 100 deg and this doesn't get there. The slot corner limits at 94.5 and the guide blocks touch at 96. Reaching 100 or more would take a 10 mm slot, a 10 mm shoulder and shorter guides, for a few degrees. Not doing that. If the cord test says the middle joint needs more, I'll revisit.
 
 Untested: it's a 2D model, and the printed stop hasn't been tried.
+
+## D-017: Closing order comes from elastic preload (2026-10-27)
+
+docs/calcs/closing_order.py balances cord torque against the back elastic at each joint. With the same elastic on all three joints, they start closing at nearly the same cord tension (0.61 to 0.63 N to reach 30 deg), so the order is undefined and guide friction would decide it. With the preload graded 0.2 / 0.3 / 0.45 N the knuckle goes first, but only by 0.05 to 0.1 N. A preload of 0.1 / 0.3 / 0.8 N widens that. The cord geometry barely helps, since the guides give nearly the same arm at every joint.
+
+So D-005 (proximal first) gets set with the elastic, not the guides: the knuckle gets the lightest elastic and the tip the heaviest. The model has no friction and the stiffness (0.3 N/mm) is a guess. The cord test should measure the elastic's real stiffness and preload. Free-air order only matters for pushing the cube away. Once the finger touches something, contact forces decide the rest.
