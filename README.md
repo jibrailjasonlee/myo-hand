@@ -16,6 +16,7 @@ Early. The finger skeleton and the first link body (60 x 15 x 17 mm) are modelle
     docs/requirements.md    what it has to do, the numbers behind that, how each requirement gets checked
     docs/decisions.md       design decisions, newest at the bottom
     docs/bom.md             what to buy, in stages, with price estimates
+    docs/calcs/             calc scripts and the figures that show what they do
 
 You need SolidWorks for the .SLDPRT files. The STEP files open in anything.
 
