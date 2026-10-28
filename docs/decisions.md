@@ -137,3 +137,11 @@ The palm is a base tray and a separate cover plate on the palm face. The cord gu
 Size to start with: 74 mm wide, 15 mm deep and about 87.5 mm long (80 mm behind the knuckle pins, plus the 7.5 mm round end), so it fits the print bed. The four finger positions are 18.5 mm apart (17 mm finger plus 1.5 mm gap), centred at z = +-9.25 and +-27.75. Each has the same clevis as the end of link 1: 7.6 mm slot, 4.7 mm ears, 8 mm slot depth, and the extension stop from D-016. One long pin through all four knuckles is the plan, which is why the palm gets built as one body.
 
 Open problem: the differential. D-002 assumed a whiffletree, but the fingers are only 18.5 mm apart, so a rigid bar can't absorb the 40 mm or more of cord difference between a stopped finger and a closing one. It probably needs the cord to run around pulleys. That gets worked out after the palm shape, and the palm cavity just has to leave room and stay reachable through the cover.
+
+## D-020: Palm base, body and knuckles (2026-10-28)
+
+Palm_Base is modelled: 74 mm wide, 15 mm deep, 80 mm behind the knuckle pins plus the 7.5 mm round end, with the stop block taking the top to 7.8 mm. Four slots 7.6 mm wide at z = +-9.25 and +-27.75, floor 8 mm behind the pin, and the stop faces on the back half of each pair of ears, all as in D-016 and D-019. One 2.4 mm pin hole runs the full width on the knuckle axis.
+
+The hole is 2.4 mm, not the 2.0 mm of the links, because it's 74 mm long and printed holes come out small. The pin gets held at its ends with glue or tape, since the hole won't grip it.
+
+Checked in the STEP file: extents, slot edges, slot floor, stop faces and hole radius all match. Not printed. The palm interior (cavity, cord guides, screw posts, cover plate) is still to do.
