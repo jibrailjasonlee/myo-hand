@@ -145,3 +145,9 @@ Palm_Base is modelled: 74 mm wide, 15 mm deep, 80 mm behind the knuckle pins plu
 The hole is 2.4 mm, not the 2.0 mm of the links, because it's 74 mm long and printed holes come out small. The pin gets held at its ends with glue or tape, since the hole won't grip it.
 
 Checked in the STEP file: extents, slot edges, slot floor, stop faces and hole radius all match. Not printed. The palm interior (cavity, cord guides, screw posts, cover plate) is still to do.
+
+## D-021: The differential goes in the forearm, not the palm (2026-11-02)
+
+I was about to cut the palm cavity for the differential and checked its stroke first. In a pulley differential, each pulley moves as far as the cord one finger takes up. That's about 60 mm with all three joints closed (tendon_path.py). The pulleys also need room behind them for the cord legs and the main pulley, so the run comes to roughly 85 to 100 mm. The palm cavity would be about 61 mm long.
+
+So the palm only routes cords. Four cords run from the guides on the cover, through the cavity, and out the bottom of the palm into a forearm housing. The housing holds the pulleys, the spool and the motor, and it has the length. This closes the open problem in D-019 as far as location goes. The pulley layout itself is still to design.
