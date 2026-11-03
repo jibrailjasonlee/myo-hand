@@ -151,3 +151,11 @@ Checked in the STEP file: extents, slot edges, slot floor, stop faces and hole r
 I was about to cut the palm cavity for the differential and checked its stroke first. In a pulley differential, each pulley moves as far as the cord one finger takes up. That's about 60 mm with all three joints closed (tendon_path.py). The pulleys also need room behind them for the cord legs and the main pulley, so the run comes to roughly 85 to 100 mm. The palm cavity would be about 61 mm long.
 
 So the palm only routes cords. Four cords run from the guides on the cover, through the cavity, and out the bottom of the palm into a forearm housing. The housing holds the pulleys, the spool and the motor, and it has the length. This closes the open problem in D-019 as far as location goes. The pulley layout itself is still to design.
+
+## D-022: Palm step and cavity (2026-11-03)
+
+The palm area behind y = -14 is stepped down 2 mm to x = 5.5, so a 2 mm cover plate can sit in it flush with the knuckle block at x = 7.5. That keeps the cord guides on the cover at the same height as the guides on the links. Under the step there's an open pocket: 69.2 mm wide, from y = -77.6 to y = -16.4, with 2.4 mm walls and a 2.5 mm floor (floor at x = -5). Both cuts open toward the palm side, so it prints back-face-down with no overhangs.
+
+Checked in the STEP file using the solid's vertices: extents, step edges, cavity corners and floor all match. The knuckle block, slots, stops and pin hole from D-020 are unchanged. Not printed.
+
+Still to do: screw posts, the four cord exits through the bottom wall, and the cover plate with its guides.
