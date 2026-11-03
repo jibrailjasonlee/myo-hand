@@ -159,3 +159,9 @@ The palm area behind y = -14 is stepped down 2 mm to x = 5.5, so a 2 mm cover pl
 Checked in the STEP file using the solid's vertices: extents, step edges, cavity corners and floor all match. The knuckle block, slots, stops and pin hole from D-020 are unchanged. Not printed.
 
 Still to do: screw posts, the four cord exits through the bottom wall, and the cover plate with its guides.
+
+## D-023: Palm screw posts and cord exits (2026-11-03)
+
+Four 5 mm posts in the cavity corners for the cover screws, each with a 2.6 mm pilot hole 8 mm deep, for M3 x 8 screws that cut their own thread. The posts are 8 mm from the short ends and overlap the side wall by 0.5 mm (centres at z = +-32.6, y = -24.4 and -69.6). My first spacing put them tangent to the wall, which made zero-thickness geometry and wouldn't extrude. Four 3 mm cord exits go through the bottom wall at z = +-9.25 and +-27.75, on x = 0.
+
+Checked in the STEP file: post, pilot hole and exit radii and positions all match. The outer fingers' cords clear the posts by about 2.3 mm. Not printed. Left to do: the cover plate with its cord holes and guide blocks.
