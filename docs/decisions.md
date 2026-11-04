@@ -165,3 +165,9 @@ Still to do: screw posts, the four cord exits through the bottom wall, and the c
 Four 5 mm posts in the cavity corners for the cover screws, each with a 2.6 mm pilot hole 8 mm deep, for M3 x 8 screws that cut their own thread. The posts are 8 mm from the short ends and overlap the side wall by 0.5 mm (centres at z = +-32.6, y = -24.4 and -69.6). My first spacing put them tangent to the wall, which made zero-thickness geometry and wouldn't extrude. Four 3 mm cord exits go through the bottom wall at z = +-9.25 and +-27.75, on x = 0.
 
 Checked in the STEP file: post, pilot hole and exit radii and positions all match. The outer fingers' cords clear the posts by about 2.3 mm. Not printed. Left to do: the cover plate with its cord holes and guide blocks.
+
+## D-024: Cover plate blank (2026-11-04)
+
+Plate is 73.7 x 65.6 mm and 2 mm thick, which leaves 0.15 mm of gap to the rebate on every side. Corners are R1. Four 3.2 mm clearance holes sit over the posts (z = +-32.6, y = -24.4 and -69.6), plain, no counterbore, so the M3 x 8 pan heads sit about 1.8 mm proud. The part is modelled with its back face at x = 0 and top face at x = 2, so in the assembly it mates with the back face on the rebate at x = 5.5. Prints flat, smooth face down, no supports.
+
+Checked in the STEP file: extents, corner radii and hole positions all match. I haven't checked the rebate in the palm file against these numbers beyond the original step dimensions. Not printed. Left to do: four cord holes and the four palm-side guide blocks (5b).
